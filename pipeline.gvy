@@ -25,7 +25,7 @@ pipeline {
             steps {
                 print '\033[35m------------ #2 Download Project  ----------------\033[0m'
                 ansiColor('css') {
-                    git branch:'development',
+                    git branch:'main',
                     changelog: false,
                     credentialsId: '386f455f-2b76-4aee-bcc3-1f9279aa868b',
                     poll: true , url: 'https://github.com/shlomiox/scripts.git'
