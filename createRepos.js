@@ -7,8 +7,8 @@ let i = Date.now();
     const createRepo = async () => {
         
         console.log(i);
-        for (i;i<i+100;i++) {
-            await sleep(1);
+        for (i;i<i+80;i++) {
+            await sleep(4000);
             const repoName = `2024_repoTest_public_${i}`;
                         
         const apiUrl = 'https://api.github.com/user/repos';
