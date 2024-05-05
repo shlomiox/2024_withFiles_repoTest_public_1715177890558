@@ -27,7 +27,7 @@ pipeline {
                 ansiColor('css') {
                     git branch:'development',
                     changelog: false,
-                    credentialsId: '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',
+                    credentialsId: '386f455f-2b76-4aee-bcc3-1f9279aa868b',
                     poll: true , url: 'https://github.com/shlomiox/scripts.git'
                     sh label: '', script: '''#!/bin/bash
                  echo "\033[35m------------        Node version     -----------------\033[0m"
