@@ -7,7 +7,7 @@ pipeline {
         kubernetes {
             containerTemplate {
                 name 'docker'
-                image 'mcr.microsoft.com/playwright:v1.42.1-jammy'
+                image 'node:12'
                 ttyEnabled true
             }
         }
