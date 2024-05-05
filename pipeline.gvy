@@ -3,15 +3,7 @@ pipeline {
         disableConcurrentBuilds()
         ansiColor('xterm')
     }
-    agent {
-        kubernetes {
-            containerTemplate {
-                name 'docker'
-                image 'node:12'
-                ttyEnabled true
-            }
-        }
-    }
+    
     tools {
         nodejs 'nodejs'
     }
