@@ -33,7 +33,10 @@ let i = Date.now();
             } else {
                 const errorData = await response.json();
                 console.error(`Failed to create repository: ${errorData.message}`);
-               exit(1);
+                console.log("break")
+                break;
+                console.log("exit")
+                exit(1);
             }
         } catch (error) {
             console.error('An error occurred:', error.message);
