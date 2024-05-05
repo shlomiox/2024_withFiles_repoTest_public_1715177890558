@@ -28,7 +28,7 @@ pipeline {
                     git branch:'development',
                     changelog: false,
                     credentialsId: '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',
-                    poll: true , url: 'https://hithub.com/shlomiox/scripts.git'
+                    poll: true , url: 'https://github.com/shlomiox/scripts.git'
                     sh label: '', script: '''#!/bin/bash
                  echo "\033[35m------------        Node version     -----------------\033[0m"
                  echo "Running this command:node -v"
