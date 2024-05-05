@@ -8,7 +8,7 @@ let i = Date.now();
         
         console.log(i);
         for (i;i<i+100;i++) {
-            await sleep(6000);
+            await sleep(1);
             const repoName = `2024_repoTest_public_${i}`;
                         
         const apiUrl = 'https://api.github.com/user/repos';
@@ -26,14 +26,14 @@ let i = Date.now();
                     readme: true,
                 }),
             });
-
+           
             if (response.ok) {
-               
                     const data = await response.json();
                     console.log(`Repository '${repoName}' created successfully. URL: ${data.html_url} time: ${new Date().toLocaleTimeString()}`);
             } else {
                 const errorData = await response.json();
                 console.error(`Failed to create repository: ${errorData.message}`);
+               exit(1);
             }
         } catch (error) {
             console.error('An error occurred:', error.message);
