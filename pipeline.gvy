@@ -7,7 +7,7 @@ pipeline {
         kubernetes {
             containerTemplate {
                 name 'docker'
-                image 'valid_image_name'
+                image 'node:12'
                 ttyEnabled true
             }
         }
