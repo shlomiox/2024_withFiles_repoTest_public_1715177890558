@@ -1,16 +1,16 @@
-// import fetch from 'node-fetch';
+
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-for (let i=10;i<12;i++) {
-// const fetch = require('node-fetch'); // Make sure to install the 'node-fetch' package
-
-    const username = 'shlomiox';
-    const token = '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';
-    const repoName = `repoTest_public_${i}`;
-
-    const apiUrl = 'https://api.github.com/user/repos';
-
+const username = 'shlomiox';
+const token = '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';
     const createRepo = async () => {
+        for (let i=149;i<152;i++) {
+            await sleep(6000);
+            const repoName = `2024_repoTest_public_${i}`;
+                        
+        const apiUrl = 'https://api.github.com/user/repos';
         try {
+
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
@@ -25,8 +25,9 @@ for (let i=10;i<12;i++) {
             });
 
             if (response.ok) {
-                const data = await response.json();
-                console.log(`Repository '${repoName}' created successfully. URL: ${data.html_url}`);
+               
+                    const data = await response.json();
+                    console.log(`Repository '${repoName}' created successfully. URL: ${data.html_url} time: ${new Date().toLocaleTimeString()}`);
             } else {
                 const errorData = await response.json();
                 console.error(`Failed to create repository: ${errorData.message}`);
@@ -34,8 +35,7 @@ for (let i=10;i<12;i++) {
         } catch (error) {
             console.error('An error occurred:', error.message);
         }
+    }
     };
+createRepo();
 
-
-    createRepo();
-}
