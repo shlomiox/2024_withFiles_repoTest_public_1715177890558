@@ -4,10 +4,11 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const username = 'shlomiox';
 const token = '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';
 let i = Date.now();
+let j = Date.now()+145;
     const createRepo = async () => {
         
         console.log(i);
-        for (i;i<i+80;i++) {
+        for (i;i<j;i++) {
             await sleep(4000);
             const repoName = `2024_repoTest_public_${i}`;
                         
