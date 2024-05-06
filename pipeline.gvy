@@ -33,7 +33,7 @@ pipeline {
                  echo "\033[35m------------        Node version     -----------------\033[0m"
                  echo "Running this command:node -v"
                  node -v
-                 echo "\033[35m------------    run create   -----------\033[0m"
+                 echo "\033[35m------------        Run create   -----------\033[0m"
                  echo "Current path:"
                  pwd
                  node createRepos.js
