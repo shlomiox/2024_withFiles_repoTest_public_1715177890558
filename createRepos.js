@@ -5,6 +5,7 @@ const username = 'shlomiox';
 const token = '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';
 let i = Date.now();
 let j = Date.now()+145;
+console.log(`start to crreate repos from ${i} till ${j}`);
     const createRepo = async () => {
         
         console.log(i);
