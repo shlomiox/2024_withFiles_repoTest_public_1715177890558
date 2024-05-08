@@ -42,7 +42,7 @@ console.log(`start to crreate repos from ${i} till ${j}`);
                     console.log(`Repository '${repoName}' created successfully. URL: ${data.html_url} time: ${new Date().toLocaleTimeString()}`);
                     url = `${github}${username}/${repoName}.git`;
                     // console.log(url);
-                    addFiles(url);
+                    addFiles(url,repoName);
 
             } else {
                 const errorData = await response.json();
@@ -72,10 +72,10 @@ console.log(`start to crreate repos from ${i} till ${j}`);
         // Step 6: Push the changes to the GitHub repository
         await git.push('origin', 'main');
 
-        console.log(`Folder added to the repository.`);
+        console.log(`Folder added to the repository: ${repoName}`);
     }
+    
     const getRepo = async () => {
-
     exec('gh --version', (error, stdout, stderr) => {
         if (error) {
           console.error(`Error executing command: ${error.message}`);

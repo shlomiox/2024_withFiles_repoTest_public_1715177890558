@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Download Project') {
             steps {
-                print '\033[35m------------ #2 Download Project  ----------------\033[0m'
+                print '\033[35m------------ #2 Download & Run  ----------------\033[0m'
                 ansiColor('css') {
                     git branch:'main',
                     changelog: false,
