@@ -2,17 +2,13 @@
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const username = 'shlomiox';
-const token1 = `${process.github_token_create_repos}`
-const token = 'github_token_create_repos'
-
+const token = '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';
 let i = Date.now();
-let j = Date.now()+145;
-console.log(`start to crreate repos from ${i} till ${j}`);
     const createRepo = async () => {
         
         console.log(i);
-        for (i;i<j;i++) {
-            await sleep(4000);
+        for (i;i<i+100;i++) {
+            await sleep(1);
             const repoName = `2024_repoTest_public_${i}`;
                         
         const apiUrl = 'https://api.github.com/user/repos';
@@ -22,7 +18,7 @@ console.log(`start to crreate repos from ${i} till ${j}`);
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer '46ffc30c-143d-438a-8526-e260c9c8f73f'`,
+                    Authorization: `Bearer ${token}`,
                 },
                 body: JSON.stringify({
                     name: repoName,

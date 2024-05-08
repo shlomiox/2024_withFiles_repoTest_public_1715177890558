@@ -3,7 +3,7 @@ const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const github = 'https://github.com/';
 const username = 'shlomiox';
-const token = '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'
+const token = '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'
 
 let i = Date.now();
 let j = Date.now()+ 100;
@@ -62,7 +62,7 @@ console.log(`start to crreate repos from ${i} till ${j}`);
         exec(`	
         git config --global --add safe.directory /home/jenkins/agent/workspace/Tools/createRepoWithFolders/single
         git config --global user.email "shlomi@ox.security"
-        git config --global user.name "shlomi"
+        git config --global user.name "shlomiox"
      `)
         const git = simpleGit(folderPath);
         await git.init();
