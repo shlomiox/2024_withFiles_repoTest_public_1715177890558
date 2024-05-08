@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "devDependencies": {
-  "node-fetch": "3.3.2",
-  "simple-git":"3.24.0"
- 
-}
+    "node-fetch": "3.3.2",
+    "simple-git": "3.24.0"
+  },
+  "dependencies": {
+    "brew": "^0.0.8"
+  }
 }
