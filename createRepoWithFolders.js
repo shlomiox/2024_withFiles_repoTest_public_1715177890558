@@ -12,25 +12,8 @@ const { exec } = require('child_process');
 let url;
 
 // import simpleGit from 'simple-git';
-console.log(folderPath);
 console.log(`start to crreate repos from ${i} till ${j}`);
-    const addFiles = async () => {
-        const git = simpleGit(folderPath);
-        await git.init();
-
-        // Step 3: Add all files in the folder to the local Git repository
-        await git.add('.');
-        // Step 4: Commit the changes with an initial commit message
-        await git.commit('Initial commit');
-
-        // // Step 5: Add the GitHub repository as a remote
-        await git.addRemote('origin', url);
-
-        // Step 6: Push the changes to the GitHub repository
-        await git.push('origin', 'main');
-
-        console.log(`Folder added to the repository.`);
-    }
+    
     const createRepo = async () => {
         
         console.log(i);
@@ -40,10 +23,7 @@ console.log(`start to crreate repos from ${i} till ${j}`);
                         
         const apiUrl = 'https://api.github.com/user/repos';
         try {
-            exec(`
-               gh --version
-               gh repo list | wc -l
-            `);
+            
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
@@ -77,5 +57,41 @@ console.log(`start to crreate repos from ${i} till ${j}`);
         }
     }
     };
+    const addFiles = async () => {
+        const git = simpleGit(folderPath);
+        await git.init();
+
+        // Step 3: Add all files in the folder to the local Git repository
+        await git.add('.');
+        // Step 4: Commit the changes with an initial commit message
+        await git.commit('Initial commit');
+
+        // // Step 5: Add the GitHub repository as a remote
+        await git.addRemote('origin', url);
+
+        // Step 6: Push the changes to the GitHub repository
+        await git.push('origin', 'main');
+
+        console.log(`Folder added to the repository.`);
+    }
+    const getRepo = async () => {
+
+    exec('gh --version', (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error executing command: ${error.message}`);
+          return;
+        }
+        console.log(`gh version: ${stdout}`);
+      });
+      
+      exec('gh repo list | wc -l', (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error executing command: ${error.message}`);
+          return;
+        }
+        console.log(`Number of repositories: ${stdout.trim()}`);
+      });
+    }
 createRepo();
+getRepo();
 
