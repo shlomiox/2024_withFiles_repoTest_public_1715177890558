@@ -68,12 +68,13 @@ console.log(`start to crreate repos from ${i} till ${j}`);
         await git.commit('Initial commit');
 
         // // Step 5: Add the GitHub repository as a remote
-        await git.addRemote('origin', url);
+        exec(`git remote set-url ${i} ${url}`)
+        await git.addRemote(i, url);
 
         // Step 6: Push the changes to the GitHub repository
         await git.push('origin', 'main');
 
-        console.log(`Folder added to the repository: ${repoName}`);
+        console.log(`Folder added to the repository`);
     }
     
     const getRepo = async () => {
