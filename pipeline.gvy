@@ -36,7 +36,7 @@ pipeline {
                  echo "\033[35m------------        Run create   -----------\033[0m"
                  echo "Current path:"
                  pwd
-                 node createRepos.js
+                 node ${testName}.js
              '''
                 }
             }
