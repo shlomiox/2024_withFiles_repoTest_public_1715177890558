@@ -92,7 +92,7 @@ console.log(`start to crreate repos from ${i} till ${j}`);
         console.log(`Number of repositories: ${stdout.trim()}`);
       });
     }
-    getRepo();
-    createRepo();
-    getRepo();
 
+    createRepo();
+
+    
