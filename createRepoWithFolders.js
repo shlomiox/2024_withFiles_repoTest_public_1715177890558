@@ -4,7 +4,6 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const github = 'https://github.com/';
 const username = 'shlomiox';
 const token = 'github_token_create_repos'
-credentialsId: 'github_token_create_repos',
 
 let i = Date.now();
 let j = Date.now()+ 100;
@@ -30,7 +29,7 @@ console.log(`start to crreate repos from ${i} till ${j}`);
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer 46ffc30c-143d-438a-8526-e260c9c8f73f`,
                 },
                 body: JSON.stringify({
                     name: repoName,
