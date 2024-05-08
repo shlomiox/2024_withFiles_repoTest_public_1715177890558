@@ -15,6 +15,9 @@ pipeline {
     tools {
         nodejs 'nodejs'
     }
+    environment {
+        github_token_create_repos = credentials('github_token_create_repos')
+    }
     stages {
         stage('Test details') {
             steps {

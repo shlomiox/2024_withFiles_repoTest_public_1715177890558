@@ -2,7 +2,7 @@
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const username = 'shlomiox';
-const token = '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';
+const token = 'github_token_create_repos'
 let i = Date.now();
 let j = Date.now()+145;
 console.log(`start to crreate repos from ${i} till ${j}`);
