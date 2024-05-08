@@ -29,7 +29,7 @@ console.log(`start to crreate repos from ${i} till ${j}`);
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer 46ffc30c-143d-438a-8526-e260c9c8f73f`,
+                    Authorization: `Bearer ${token}`,
                 },
                 body: JSON.stringify({
                     name: repoName,
