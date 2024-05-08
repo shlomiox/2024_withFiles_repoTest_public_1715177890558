@@ -5,7 +5,7 @@ const github = 'https://github.com/';
 const username = 'shlomiox';
 const token = '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';
 let i = Date.now();
-let j = Date.now()+1;
+let j = Date.now()+145;
 const folderPath = "./single";
 let simpleGit = require('simple-git');
 let url;
