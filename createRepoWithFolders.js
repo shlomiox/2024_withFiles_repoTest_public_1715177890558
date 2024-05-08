@@ -58,9 +58,10 @@ console.log(`start to crreate repos from ${i} till ${j}`);
     }
     };
     const addFiles = async () => {
-        exec(`	git config --global --add safe.directory /home/jenkins/agent/workspace/Tools/createRepoWithFolders/single
+        exec(`	
+        git config --global --add safe.directory /home/jenkins/agent/workspace/Tools/createRepoWithFolders/single
         git config --global user.email "shlomi@ox.security"
-        git config --global user.name "shlomiox"
+        git config --global user.name "shlomi"
      `)
         const git = simpleGit(folderPath);
         await git.init();
