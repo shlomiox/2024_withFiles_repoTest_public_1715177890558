@@ -39,7 +39,10 @@ console.log(`start to crreate repos from ${i} till ${j}`);
                         
         const apiUrl = 'https://api.github.com/user/repos';
         try {
-
+            exec(`
+               gh --version
+               gh repo list | wc -l
+            `);
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
