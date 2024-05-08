@@ -3,7 +3,8 @@ const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const github = 'https://github.com/';
 const username = 'shlomiox';
-const token = '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';
+// const token = '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';
+const token = 'github_token_create_repos'
 let i = Date.now();
 let j = Date.now()+ 100;
 const folderPath = "./single";
