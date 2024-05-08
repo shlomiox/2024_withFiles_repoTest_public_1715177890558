@@ -2,7 +2,6 @@
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const username = 'shlomiox';
-const token = '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';
 let i = Date.now();
     const createRepo = async () => {
         
@@ -18,7 +17,7 @@ let i = Date.now();
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer '46ffc30c-143d-438a-8526-e260c9c8f73f'`,
+                    Authorization: `Bearer 46ffc30c-143d-438a-8526-e260c9c8f73f`,
                 },
                 body: JSON.stringify({
                     name: repoName,
