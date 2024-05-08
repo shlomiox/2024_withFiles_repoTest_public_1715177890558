@@ -5,7 +5,7 @@ const github = 'https://github.com/';
 const username = 'shlomiox';
 const token = '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';
 let i = Date.now();
-let j = Date.now()+145;
+let j = Date.now()+ 100;
 const folderPath = "./single";
 let simpleGit = require('simple-git');
 const { exec } = require('child_process');
@@ -18,7 +18,7 @@ console.log(`start to crreate repos from ${i} till ${j}`);
         
         console.log(i);
         for (i;i<j;i++) {
-            await sleep(4000);
+            await sleep(2000);
             const repoName = `2024_withFiles_repoTest_public_${i}`;
                         
         const apiUrl = 'https://api.github.com/user/repos';
